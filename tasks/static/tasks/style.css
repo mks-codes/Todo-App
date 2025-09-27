@@ -1,0 +1,40 @@
+body {
+    background-color: #f5f6fa;
+    font-family: 'Poppins', sans-serif;
+    margin: 40px;
+
+}
+
+h1 {
+    color: #2d3436;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button,
+a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    border: none;
+    background-color: #0984e3;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover,
+a:hover {
+    background-color: #74b9ff;
+}

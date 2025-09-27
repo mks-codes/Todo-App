@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}My Tasks{% endblock %}
+{% block content %}
+<h1>My To-Do List</h1>
+<a href="{% url "add_task" %}">Add Task</a>
+<ul>
+    {% for task in tasks  %}
+        <li>
+            <form action="{% url "toggle_complete" task.id %}" method="post" style="display: inline;">
+                {% csrf_token %}
+                <button type="submit">{% if task.complete  %}Undo{% else %}Done{% endif %}</button>
+            </form>
+            {% if task.complete %}<s>{{task.title}}</s>{% else %}{{task.title}}{% endif %}
+            <a href="{% url "update_task" task.id %}">Edit</a>
+            <a href="{% url "delete_task" task.id %}">Delete</a>
+        </li>
+        {% empty %}
+        <li>No tasks yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
